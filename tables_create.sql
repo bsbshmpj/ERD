@@ -27,7 +27,7 @@ CREATE TABLE child_house
 (
     id int NOT NULL AUTO_INCREMENT,
     SIGUNNAME varchar(255),
-    CRNAME varchar(255),
+    CRNAME varchar(255) UNIQUE ,
     CRTYPENAME varchar(255),
     CRADDR varchar(255),
     CRTELNO varchar(255),
@@ -44,7 +44,7 @@ CREATE TABLE child_house
 CREATE TABLE kindergarden
 (
     id int NOT NULL AUTO_INCREMENT,
-    KINDERNAME varchar(255),
+    KINDERNAME varchar(255) UNIQUE,
     ESTABLISH varchar(255),
     LDGRNAME varchar(255),
     ODATE date,
@@ -81,7 +81,8 @@ CREATE TABLE post
 	id int NOT NULL AUTO_INCREMENT,
 	title varchar(50) NOT NULL,
 	content longtext NOT NULL,
-	viewCnt int DEFAULT 0 DEFAULT 0,
+	viewCnt int DEFAULT 0,
+	recommendCnt int DEFAULT 0,
 	createDate datetime DEFAULT now(),
 	userId int NOT NULL,
 	PRIMARY KEY (id)
